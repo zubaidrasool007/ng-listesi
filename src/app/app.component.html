@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<div>
+  <form>
+      <input required type="text" minlength="5" maxlength="10" [(ngModel)]=todo id="todo" name="input" #input="ngModel" (change)="log(input)">  
+      <button [disabled]="input.invalid" (click)="addtodo(input.value)">Add</button>
+      <div *ngIf="input.touched && !input.valid">
+          <!-- <div *ngIf="input.errors">Enter Input value here</div> -->
+          <div style="color: red;" *ngIf="input.errors">text length must be 5</div>
+      </div>
+      <h4>{{todo}}</h4>
+      <ul *ngFor="let item of todos, index as i">
+          <li>{{item}}
+          
+             <button (click)="delteitem(i)">Delete</button></li>
+      </ul>
+
+  </form>
+</div>
