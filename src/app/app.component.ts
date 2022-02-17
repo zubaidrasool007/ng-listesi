@@ -16,7 +16,7 @@ export class AppComponent {
   todo = "";
   todos: any[] = [];
   selectedindex: any;
-  // savevalue:boolean;
+  
 
   constructor() {
     this.localitem = localStorage.getItem("todolist")
@@ -34,7 +34,6 @@ export class AppComponent {
 
   addtodo(todo:any) { 
     if (this.todo.length > 4) {
-      // this.todos.push(todo);
      let x = Math.random() * 100;
       console.warn(this.todos)
 
@@ -58,7 +57,6 @@ export class AppComponent {
     localStorage.setItem("todolist", JSON.stringify(this.todos))
     this.show = !this.show;
     this.showme = !this.showme;
-    // console.warn(item)
 
   }
   updatebtn(item:any) {
