@@ -70,17 +70,7 @@ export class AppComponent {
   }
 
   delteitem(index: number) {
-    // let index:number =this.todos.findIndex(function(e){
-    //    if(e ===item){
-    //      return true
-    //    }else{
-    //      return false
-    //    }
-    // })
 
-    // if(index!== -1){
-    //   this.todos.splice(index, 1);
-    // }
     this.todos.splice(index, 1)
     localStorage.setItem("todolist", JSON.stringify(this.todos))
     console.warn(index)
