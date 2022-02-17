@@ -1,6 +1,7 @@
 # Todolist
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+Create Updat and delete todos of users using localstorage
 
 ## Development server
 
