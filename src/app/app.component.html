@@ -1,13 +1,13 @@
-<h1>{{title}}</h1>
+<!-- <h1>{{title}}</h1>
 <div>
   <form>
       <input required type="text" minlength="5" maxlength="10" [(ngModel)]=todo id="todo" name="input" #input="ngModel" (change)="log(input)">  
       <span *ngIf="showme"><button  [disabled]="input.invalid" (click)="addtodo(input.value)">Add</button></span>
        <span *ngIf="show">   <button  (click)="updatebtn(input.value)">Update</button></span>
-      <div *ngIf="input.touched && !input.valid">
+      <div *ngIf="input.touched && !input.valid"> -->
 
           <!-- <div *ngIf="input.errors">Enter Input value here</div> -->
-          <div style="color: red;" *ngIf="input.errors">text length must be 5</div>
+          <!-- <div style="color: red;" *ngIf="input.errors">text length must be 5</div>
       </div>
       
       <h4>{{todo}}</h4>
@@ -18,6 +18,17 @@
             <button id="edit" (click)="editbtn(item,i)">Edit</button>
              <button (click)="delteitem(i)">Delete</button></li>
       </ul>
-
+  
   </form>
+</div> -->
+<div>
+<app-todo-form [todos]="todos" (additem)="addtodo($event)" (updateitem)="updatebtn($event)">
+
+</app-todo-form>
+<app-todo-listitem [todos]="todos" (deletevalue)="delteitem($event)"
+  (edittodo)="editbtn($event)"
+>
+
+  
+</app-todo-listitem>
 </div>

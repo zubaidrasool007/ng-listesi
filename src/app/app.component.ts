@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'To-Do-List';
 
-  log(x: any) { console.log(x) }
+  
   show = false;
   showme = true;
   
@@ -16,9 +16,7 @@ export class AppComponent {
   todo = "";
   todos: any[] = [];
   selectedindex: any;
-  
-
-  constructor() {
+    constructor() {
     this.localitem = localStorage.getItem("todolist")
     if (this.localitem == null) {
       this.todos = [];
@@ -31,36 +29,23 @@ export class AppComponent {
   changeValue($event:any){
     localStorage.setItem("todolist", JSON.stringify(this.todos))
   }
-
   addtodo(todo:any) { 
     if (this.todo.length > 4) {
-     let x = Math.random() * 100;
-      console.warn(this.todos)
-
-      this.todo = "";
-      let objectitem = {
-        id:"ubiqid"+x,
-        Name: todo,
-        Completed:false
-      }
-      console.warn(objectitem)
-      this.todos.push(objectitem);
+      this.todos.push(todo);
       localStorage.setItem("todolist", JSON.stringify(this.todos))
 
     }
   }
-
-  editbtn(item: any, index: number) {
+  editbtn(item: any) {
     this.todo = item.Name;
-    this.selectedindex = index;
-    console.warn(this.todo)
+    this.selectedindex = item.index;
+    console.warn(item)
     localStorage.setItem("todolist", JSON.stringify(this.todos))
-    this.show = !this.show;
-    this.showme = !this.showme;
+    // this.show = !this.show;
+    // this.showme = !this.showme;
 
   }
   updatebtn(item:any) {
-
     this.todos[this.selectedindex as number].Name = this.todo;
     localStorage.setItem("todolist", JSON.stringify(this.todos))
     this.show = !this.show;
@@ -68,9 +53,7 @@ export class AppComponent {
     this.todo = "";
 
   }
-
   delteitem(index: number) {
-
     this.todos.splice(index, 1)
     localStorage.setItem("todolist", JSON.stringify(this.todos))
     console.warn(index)
