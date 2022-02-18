@@ -1,0 +1,7 @@
+<ul *ngFor="let item of todos, index as i">
+       
+    <li>{{item.Name}}
+      <input type="checkbox" [(ngModel)]="item.Completed"  name="checkvalue"  #checkvalue="ngModel" (change)="changeValue($event)">
+      <button id="edit" (click)="editbtn(item,i)">Edit</button>
+       <button (click)="delteitem(i)">Delete</button></li>
+</ul>
