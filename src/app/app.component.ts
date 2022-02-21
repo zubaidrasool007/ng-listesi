@@ -29,17 +29,15 @@ export class AppComponent {
   changeValue($event:any){
     localStorage.setItem("todolist", JSON.stringify(this.todos))
   }
-  addtodo(todo:any) { 
-    if (this.todo.length > 4) {
-      this.todos.push(todo);
+  addtodo(data:any) { 
+      
+      this.todos.push(data);
       localStorage.setItem("todolist", JSON.stringify(this.todos))
-
-    }
   }
-  editbtn(item: any) {
-    this.todo = item.Name;
-    this.selectedindex = item.index;
-    console.warn(item)
+  editData(data: any) {
+    this.todo = data.item.Name;
+    this.selectedindex = data.index;
+    console.log(data.item.Name)
     localStorage.setItem("todolist", JSON.stringify(this.todos))
     // this.show = !this.show;
     // this.showme = !this.showme;
