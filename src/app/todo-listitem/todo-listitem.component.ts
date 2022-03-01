@@ -10,6 +10,7 @@ export class TodoListitemComponent implements OnInit {
   @Input ()todos:any[]=[];
   @Output  () deletevalue =new EventEmitter();
   @Output () edittodo =new EventEmitter();
+  
 
 
 
