@@ -6,13 +6,16 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
-  todo="";
+   @Input() todo="";
   @Input () todos:any=[];
   @Input () selectedindex:any;
-  // @Input () show=false;
+  @Input () editItem = null;
+  
+
   // @Input () showme=true;
   @Output  () additem =new EventEmitter();
   @Output () updateitem =new EventEmitter();
+  @Output () todoitem =new EventEmitter()
 
 
   constructor() { }
@@ -35,13 +38,15 @@ export class TodoFormComponent implements OnInit {
 
     }
   }
-  // updatebtn(item:any) {
-  //   this.todos[this.selectedindex as number].Name = this.todo;
-  //   localStorage.setItem("todolist", JSON.stringify(this.todos))
-  //   // this.show = !this.show;
-  //   // this.showme = !this.showme;
-  //   this.todo = "";
-  //   this.updateitem.emit(item);
-  // }
+  updatebtn(item:any) {
+  
+  
+    // this.show = !this.show;
+    // this.showme = !this.showme;
+    this.updateitem.emit(item);
+    this.todo = "";
+   
+    console.log("item",item)
+  }
 
 }
