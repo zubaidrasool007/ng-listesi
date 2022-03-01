@@ -22,13 +22,11 @@
   </form>
 </div> -->
 <div>
-<app-todo-form [todos]="todos" (additem)="addtodo($event)" (updateitem)="updatebtn($event)">
+<app-todo-form  [todo]="todo"   (additem)="addtodo($event)" (updateitem)="updatebtn($event)">
 
 </app-todo-form>
-<app-todo-listitem [todos]="todos" (deletevalue)="delteitem($event)"
-  (edittodo)="editData($event)"
->
+<app-todo-listitem [todos]="todos"   (deletevalue)="delteitem($event)" 
+  (edittodo)="editData($event)">
 
-  
 </app-todo-listitem>
 </div>
