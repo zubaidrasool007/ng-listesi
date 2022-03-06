@@ -6,16 +6,16 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
-   @Input() todo="";
-  @Input () todos:any=[];
-  @Input () selectedindex:any;
+   @Input() todo = "";
+  @Input () todos: any = [];
+  @Input () selectedindex: any;
   @Input () editItem = null;
   
 
   // @Input () showme=true;
-  @Output  () additem =new EventEmitter();
-  @Output () updateitem =new EventEmitter();
-  @Output () todoitem =new EventEmitter()
+  @Output  () additem = new EventEmitter();
+  @Output () updateitem = new EventEmitter();
+  @Output () todoitem = new EventEmitter()
 
 
   constructor() { }
@@ -28,9 +28,9 @@ export class TodoFormComponent implements OnInit {
      let x = Math.random() * 100;
 
       let objectitem = {
-        id:"ubiqid"+x,
+        id: "ubiqid"+x,
         Name: value,
-        Completed:false
+        Completed: false
       }
   
       this.additem.emit(objectitem )
@@ -38,15 +38,10 @@ export class TodoFormComponent implements OnInit {
 
     }
   }
+
   updatebtn(item:any) {
-  
-  
-    // this.show = !this.show;
-    // this.showme = !this.showme;
     this.updateitem.emit(item);
     this.todo = "";
-   
-    console.log("item",item)
   }
 
 }
