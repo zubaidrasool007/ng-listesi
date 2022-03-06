@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo-form',
@@ -6,22 +6,18 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent implements OnInit {
-   @Input() todo = "";
+  @Input() todo = "";
   @Input () todos: any = [];
   @Input () selectedindex: any;
   @Input () editItem = null;
-  
 
-  // @Input () showme=true;
   @Output  () additem = new EventEmitter();
   @Output () updateitem = new EventEmitter();
   @Output () todoitem = new EventEmitter()
 
-
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   addtodo(value:any) { 
     if (value.length > 4) {
